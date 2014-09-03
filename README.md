@@ -9,12 +9,12 @@ Install with [npm](http://npmjs.org):
 
     $ npm install acatiris
     
-Acatiris needs the [jp2a](http://csl.name/jp2a/) and [Imagemagick](http://www.imagemagick.org/) CLI tools installed and available on the system's $PATH.
+Acatiris needs the [jp2a](http://csl.name/jp2a/) and [Imagemagick](http://www.imagemagick.org/) CLI tools installed and available on the system's $PATH in order to run.
 
 For example:
 
-* on OS X you can install jp2a with [Homebrew](http://brew.sh/) by running: `$ brew install jp2a imagemagick`
-* on Ubuntu/Debian you can install jp2a with `apt-get`: `$ sudo apt-get install jp2a libmagick++-dev`
+* on OS X you can install the dependencies with [Homebrew](http://brew.sh/) by running: `$ brew install jp2a imagemagick`
+* on Ubuntu/Debian you can install the dependencies with `apt-get`: `$ sudo apt-get install jp2a libmagick++-dev`
 
 ## Example
 
