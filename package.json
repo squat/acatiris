@@ -11,7 +11,7 @@
     "middleware"
   ],
   "author": "@lsvx",
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "dependencies": {
     "express": "~4.8.0",
     "lodash": "~2.2.0",
@@ -19,5 +19,17 @@
     "jp2a": "~0.2.0",
     "imagemagick-native": "~1.2.2",
     "es6-promise": "~0.1.1"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lsvx/acatiris.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lsvx/acatiris/issues"
+  },
+  "homepage": "https://github.com/lsvx/acatiris"
 }
