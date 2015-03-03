@@ -59,12 +59,8 @@ acatiris.endpoint.use(function(req, res) {
         /**
          * Define a callback for jp2a to execute when it finishes rendering the
          * image.
-         *
-         * Move the style element to the output element and remove extra
-         * markup.
          */
         var $ = cheerio.load('<pre class="acatiris">' + out + '</pre>');
-        out = $('.ascii').append($('style')).parent().html();
 
         /** Return the processed response. */
         return res.send($.html());
@@ -101,17 +97,17 @@ acatiris.convert = function(src) {
             data = new Buffer(data, 'binary');
             format = acatiris.identify(data);
             /** Check if the identification succeeded, otherwise return an error. */
-            if (format) {
-                if (format !== 'JPEG') {
-                    data = acatiris.imagemagick.convert({format: 'JPEG', srcData: data});
-                }
-                options.data = data.toString('binary');
-
-                return acatiris.jp2a(options, function(out) {
-                    resolve(out);
-                });
+            if (!format) {
+                return reject('Unrecognized image format');
             }
-            return reject('Unrecognized image format');
+            if (format !== 'JPEG') {
+                data = acatiris.imagemagick.convert({format: 'JPEG', srcData: data});
+            }
+            options.data = data.toString('binary');
+
+            return acatiris.jp2a(options, function(out) {
+                resolve(out);
+            });
         }, function(error) {
             return reject(error);
         });
@@ -151,7 +147,6 @@ acatiris.fetch = function(url) {
             });
 
         }).on('error', function(e) {
-            console.log(e)
             /** If the get request fails, reject the promise with an error. */
             reject(e.message);
         });

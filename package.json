@@ -1,6 +1,6 @@
 {
   "name": "acatiris",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Cat Iris is an ASCII art middleware for Express.",
   "main": "acatiris.js",
   "keywords": [
